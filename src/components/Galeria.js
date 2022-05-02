@@ -5,7 +5,7 @@ export const Galeria = ({data}) => {
 
 
   return (
-    <div className='flex flex-wrap container mx-auto '>
+    <div className='grid grid-cols-2 p-2 space-y-2 '>
       {data.map(element => 
         <Image key={element.id} data={element}/>
       )}

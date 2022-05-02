@@ -7,7 +7,7 @@ export const FormSearch = ({handleSubmit,searchTerm,handleForm}) => {
       <p className=' text-lg lg:text-3xl'>Las mejores fotos de stock gratis, imágenes libres de regalías y vídeos compartidos por creadores.</p>
     <form action="" onSubmit={handleSubmit} className='mt-4'>
     <input type="text" className='p-2 rounded-md text-black w-3/5 text-lg lg:text-2xl lg:p-4' placeholder="Buscar" name="searchTerm" id="searchTerm" value={searchTerm} onChange={handleForm}/>
-      <button type="submit" className=' bg-white text-black p-2 ml-2 border-none rounded-md'>Buscar</button>
+      <button type="submit" className=' bg-white text-black p-2  border-none rounded-md text-xl ml-2'>Buscar</button>
      </form>
     </div>
   )

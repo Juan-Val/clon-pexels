@@ -1,8 +1,8 @@
 import {  useEffect, useState } from "react";
 import { getPexels } from "./api/pexels";
+import { getImage } from "./api/photo";
 import { FormSearch } from "./components/FormSearch";
 import { Galeria } from "./components/Galeria";
-import { Header } from "./components/Header";
 import './index.css';
 
 function App() {
@@ -37,7 +37,6 @@ function App() {
 
   return (
     <div className="w-full mx-auto">
-     <Header/>
      <FormSearch 
      handleForm={handleForm}
      handleSubmit={handleSubmit}
