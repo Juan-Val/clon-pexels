@@ -10,7 +10,7 @@ export const ClonPexel = () => {
     <div className='relative h-screen justify-between flex flex-col'>
       <Header />
       <Routes >
-        <Route path="/" index element={<App />} />
+        <Route path="/"  element={<App />} />
         <Route path="image" element={<ZoomImage/>} />
         <Route path="image/:id" element={<ZoomImage/>} />
 

@@ -8,7 +8,7 @@ import { ClonPexel } from './ClonPexel';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename='Clon-pexels'>
+    <BrowserRouter >
     <ClonPexel />
     </BrowserRouter>
   </React.StrictMode>
