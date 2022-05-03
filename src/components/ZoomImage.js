@@ -43,12 +43,12 @@ export const ZoomImage = () => {
 
 
   return (
-    <div className='container mx-auto m-5 p-5 text-center drop-shadow-lg'>
+    <div className='container mx-auto p-5 text-center drop-shadow-lg'>
       <h1 className='text-2xl'>Fotografo: {newData.photographer}</h1>
       <h3 className='text-sm m-2'>{newData.alt}</h3>
       {
         loading ? <h1>Loading...</h1> : 
-        <img src={newData.src.large} alt={newData.alt} className='w-full'/>
+        <img src={newData.src.original} alt={newData.alt} className='w-full rounded-md'/>
       }
       <p className='text-lg m-2 '>Descargar</p>
       <div>

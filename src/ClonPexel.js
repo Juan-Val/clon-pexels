@@ -7,7 +7,7 @@ import { ZoomImage } from './components/ZoomImage'
 
 export const ClonPexel = () => {
   return (
-    <>
+    <div className='relative h-screen justify-between flex flex-col'>
       <Header />
       <Routes >
         <Route path="/" element={<App />} />
@@ -16,6 +16,6 @@ export const ClonPexel = () => {
 
       </Routes>
       <Fooder />
-    </>
+    </div>
   )
 }

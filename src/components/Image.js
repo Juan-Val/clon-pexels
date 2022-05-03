@@ -14,10 +14,12 @@ export const Image = ({data}) => {
   
 
   return (
-    <div className='w-44 ' >
+    <div className='min-w-44 m-2 sm:w-72 md:w-11/12' >
       <Link to={`image/${data.id}`}>
-        <img src={urlMedium} alt={data.alt} />
+        <img src={urlMedium} alt={data.alt} className="rounded-lg"/>
       </Link>
+      <h2 className='text-sm'>{data.photographer}</h2>
+      <p className='text-xs '>{data.alt}</p>
     </div>
   )
 }
