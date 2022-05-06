@@ -7,7 +7,7 @@ import { ZoomImage } from './components/ZoomImage'
 
 export const ClonPexel = () => {
   return (
-    <div >
+    <div className='relative h-screen flex flex-col '>
       <Header />
       <Routes >
         <Route path="/"  element={<App />} />

@@ -2,17 +2,20 @@ import {  useEffect, useState } from "react";
 import { getPexels } from "./api/pexels";
 import { FormSearch } from "./components/FormSearch";
 import { Galeria } from "./components/Galeria";
+import { Loagding } from "./components/Loading";
 import './index.css';
 
 function App() {
 
   const [searchTerm, setSearchTerm] = useState('')
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const loadImages = async() => {
     const respons = searchTerm === '' ? await getPexels() : await getPexels(searchTerm);
     const newData = respons.data.photos;
     setData(newData);
+    setLoading(false);
   } 
 
   
@@ -25,6 +28,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     loadImages();
+    setLoading(true);
     setSearchTerm('');
   }
 
@@ -48,7 +52,7 @@ function App() {
      handleSubmit={handleSubmit}
      searchTerm={searchTerm}
      />
-    <Galeria data={data}/> 
+      {loading ? <Loagding /> : <Galeria data={data} />}
     </div>
   );
 }
