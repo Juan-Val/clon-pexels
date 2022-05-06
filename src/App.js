@@ -17,6 +17,11 @@ function App() {
 
   
 
+/**
+ * The handleSubmit function is called when the form is submitted. It prevents the default action of
+ * the form, which is to reload the page, and then calls the loadImages function
+ * @param e - the event object
+ */
   const handleSubmit = (e) => {
     e.preventDefault();
     loadImages();
