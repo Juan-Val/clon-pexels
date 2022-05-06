@@ -1,6 +1,5 @@
 import {  useEffect, useState } from "react";
 import { getPexels } from "./api/pexels";
-import { Barra } from "./components/Barra";
 import { FormSearch } from "./components/FormSearch";
 import { Galeria } from "./components/Galeria";
 import './index.css';
@@ -18,13 +17,6 @@ function App() {
 
   
 
-  const handleClick = (e) => {
-    console.log(e.target.value)
-    setSearchTerm(e.target.value);
-    console.log(searchTerm)
-    loadImages();
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault();
     loadImages();
@@ -41,17 +33,16 @@ function App() {
 
   useEffect(() => {
     loadImages();
-  }, [data])
+  }, [])
   
 
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full mx-auto ">
      <FormSearch 
      handleForm={handleForm}
      handleSubmit={handleSubmit}
      searchTerm={searchTerm}
      />
-     <Barra handleClick={handleClick}/>
     <Galeria data={data}/> 
     </div>
   );
