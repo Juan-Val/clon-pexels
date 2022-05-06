@@ -5,7 +5,7 @@ export const Galeria = ({data}) => {
 
 
   return (
-    <div className='grid  p-4 mx-auto justify-items-stretch grid-cols-2 lg:grid-cols-3'>
+    <div className='grid grid-cols-2 md:grid-cols-3 content-center p-4'>
       {data.map(element => 
         <Image key={element.id} data={element}/>
       )}

@@ -1,6 +1,6 @@
 import {  useEffect, useState } from "react";
 import { getPexels } from "./api/pexels";
-import { getImage } from "./api/photo";
+import { Barra } from "./components/Barra";
 import { FormSearch } from "./components/FormSearch";
 import { Galeria } from "./components/Galeria";
 import './index.css';
@@ -9,14 +9,21 @@ function App() {
 
   const [searchTerm, setSearchTerm] = useState('')
   const [data, setData] = useState([]);
-  const [error, setError] = useState(false);
 
   const loadImages = async() => {
     const respons = searchTerm === '' ? await getPexels() : await getPexels(searchTerm);
     const newData = respons.data.photos;
     setData(newData);
-
   } 
+
+  
+
+  const handleClick = (e) => {
+    console.log(e.target.value)
+    setSearchTerm(e.target.value);
+    console.log(searchTerm)
+    loadImages();
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,15 +31,17 @@ function App() {
     setSearchTerm('');
   }
 
+
+
   const handleForm = (e) => {
     e.preventDefault();
-    setSearchTerm(e.target.value)
+    setSearchTerm(e.target.value);
    
   }
 
   useEffect(() => {
     loadImages();
-  }, [FormSearch])
+  }, [data])
   
 
   return (
@@ -42,8 +51,8 @@ function App() {
      handleSubmit={handleSubmit}
      searchTerm={searchTerm}
      />
-     <Galeria 
-     data={data}/>
+     <Barra handleClick={handleClick}/>
+    <Galeria data={data}/> 
     </div>
   );
 }

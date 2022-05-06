@@ -14,9 +14,9 @@ export const Image = ({data}) => {
   
 
   return (
-    <div className='min-w-44 m-2 sm:w-72 md:w-11/12' >
+    <div className='min-w-40 m-2 sm:w-72 md:w-11/12 mt-4 md:mt-2 lg:mt-0' >
       <Link to={`image/${data.id}`}>
-        <img src={urlMedium} alt={data.alt} className="rounded-lg"/>
+        <img src={urlMedium} alt={data.alt} className=" rounded-lg h-[80%] md:h-[90%] object-fill"/>
       </Link>
       <h2 className='text-sm'>{data.photographer}</h2>
       <p className='text-xs '>{data.alt}</p>

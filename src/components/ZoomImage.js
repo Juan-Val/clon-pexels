@@ -43,15 +43,15 @@ export const ZoomImage = () => {
 
 
   return (
-    <div className='container mx-auto p-5 text-center drop-shadow-lg'>
+    <div className='container mx-auto p-5 text-center drop-shadow-lg min-h-[85%] w-3/4  '>
       <h1 className='text-2xl'>Fotografo: {newData.photographer}</h1>
       <h3 className='text-sm m-2'>{newData.alt}</h3>
       {
         loading ? <h1>Loading...</h1> : 
-        <img src={newData.src.original} alt={newData.alt} className='w-full rounded-md'/>
+        <img src={newData.src.original} alt={newData.alt} className=' h-3/5 rounded-md mx-auto'/>
       }
       <p className='text-lg m-2 '>Descargar</p>
-      <div>
+      <div className='flex justify-center'>
         <button className='bg-gray-800  hover:bg-gray-900  text-white py-2 px-4 rounded m-2' onClick={() => download(newData.src.original, newData.alt+'.jpg')}>Original</button>
         <button className='bg-gray-800  hover:bg-gray-900  text-white  py-2 px-4 rounded m-2' onClick={() => download(newData.src.large, newData.alt+'.jpg')}>Large</button>
         <button className='bg-gray-800  hover:bg-gray-900  text-white  py-2 px-4 rounded m-2' onClick={() => download(newData.src.medium, newData.alt+'.jpg')}>Medium</button>
