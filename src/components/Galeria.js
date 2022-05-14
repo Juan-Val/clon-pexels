@@ -5,7 +5,7 @@ export const Galeria = ({data}) => {
 
 
   return (
-    <div className='grid grid-cols-2 md:grid-cols-3 content-center p-4 '>
+    <div className='p-4 masonry-3-col'>
       {data.map(element => 
         <Image key={element.id} data={element}/>
       )}
